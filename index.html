@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8" />
-    <title>title</title>
+    <title>Тестирование модального окна</title>
 
     <style>
         .modalDialog {
@@ -16,9 +16,9 @@
             background: rgba(0, 0, 0, 0.1);
             z-index: 99999;
             opacity: 0;
-            -webkit-transition: opacity 400ms ease-in;
-            -moz-transition: opacity 400ms ease-in;
-            transition: opacity 400ms ease-in;
+            -webkit-transition: opacity 1400ms ease-in;
+            -moz-transition: opacity 1400ms ease-in;
+            transition: opacity 1400ms ease-in;
             pointer-events: none;
         }
 
@@ -60,6 +60,21 @@
         .close:hover {
             background: #6ed1d8;
         }
+
+        .test img {
+            width: 50px;
+            height: 50px;
+            padding-top: 20px;
+
+        }
+
+        .test {
+            text-align: center;
+        }
+        
+        .text {
+text-align: justify;
+        }
     </style>
 </head>
 
@@ -71,6 +86,18 @@
             <a href="#close" title="Close" class="close">X</a>
             <h2>Модальное окно </h2>
             <p>Это модальное окно создано с помощью CSS3!</p>
+            <div class="text">Сегодня в программировании довольно распространены модальные окна. Модальные или
+                всплывающие окна используются, чтобы показать последние изменения веб-страницы. Они привлекают внимание
+                пользователя к определенному элементу.
+                Самое главное преимущество модального окна это то, что оно показывает добавленную информацию без
+                дополнительной загрузки страницы. Оно дает пользователю соответствующую информацию в виде диалогового
+                окна.
+                Другое преимущество относится к медленной загрузке, что может привлечь внимание пользователей.
+                Теперь, когда мы узнали, что такое модальное окно, перейдем к его созданию.
+                Есть различные способы создания модального окна с помощью HTML, CSS и JavaScript.
+                Давайте начнем создать код шаг за шагом!
+                <div class="test"><img src="test.png" alt="" srcset=""></div>
+            </div>
         </div>
         <a href="#close" title="Close" class="close">x</a>
     </div>
