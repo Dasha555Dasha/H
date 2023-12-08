@@ -6,6 +6,23 @@
     <title>Тестирование модального окна</title>
 
     <style>
+        html {
+            block-size: border-box;
+        }
+
+        *,
+        ::after ::before {
+            block-size: inherit;
+        }
+
+        body {
+            display: flex;
+        }
+
+        ul {
+            list-style: none;
+        }
+
         .modalDialog {
             position: fixed;
             font-family: Arial, Helvetica, sans-serif;
@@ -16,9 +33,9 @@
             background: rgba(0, 0, 0, 0.1);
             z-index: 99999;
             opacity: 0;
-            -webkit-transition: opacity 1400ms ease-in;
-            -moz-transition: opacity 1400ms ease-in;
-            transition: opacity 1400ms ease-in;
+            /*-webkit-transition: opacity 400ms ease-in;
+            -moz-transition: opacity 400ms ease-in;
+            transition: opacity 400ms ease-in;*/
             pointer-events: none;
         }
 
@@ -28,18 +45,20 @@
         }
 
         .modalDialog>div {
-            width: 400px;
+            width: 850px;
+            height: 600px;
             position: relative;
             margin: 10% auto;
             padding: 5px 20px 13px 20px;
             border-radius: 10px;
-            background: -moz-linear-gradient(#2edbe8, #01a6b2);
+            background-color: #ffffff;
+            /*background: -moz-linear-gradient(#2edbe8, #01a6b2);
             background: -webkit-linear-gradient(#2edbe8, #01a6b2);
-            background: -o-linear-gradient(#2edbe8, #01a6b2);
+            background: -o-linear-gradient(#2edbe8, #01a6b2);*/
         }
 
         .close {
-            background: #606061;
+            background: #e9cfcf;
             color: #FFFFFF;
             line-height: 25px;
             position: absolute;
@@ -49,31 +68,54 @@
             width: 24px;
             text-decoration: none;
             font-weight: bold;
-            -webkit-border-radius: 12px;
-            -moz-border-radius: 12px;
+            /*-webkit-border-radius: 12px;
+            -moz-border-radius: 12px;*/
             border-radius: 12px;
-            -moz-box-shadow: 1px 1px 3px #000;
-            -webkit-box-shadow: 1px 1px 3px #000;
+            /*-moz-box-shadow: 1px 1px 3px #000;
+            -webkit-box-shadow: 1px 1px 3px #000;*/
             box-shadow: 1px 1px 3px #000;
         }
 
         .close:hover {
-            background: #6ed1d8;
+            background-color: e9cfcf;
+            /*background: #6ed1d8;*/
         }
 
-        .test img {
-            width: 50px;
-            height: 50px;
-            padding-top: 20px;
-
-        }
-
-        .test {
+        .card__button {
+            width: 750px;
+            height: 45px;
+            padding-top: 10px;
+            background-color: #007A5C;
+            border-radius: 20px;
+            border-style: hidden;
+            font-size: 24px;
             text-align: center;
         }
-        
-        .text {
-text-align: justify;
+
+        .predmet__card {
+            display: inline;
+        }
+
+
+        .fio__card {
+            text-align: center;
+            font-size: 40px;
+            padding-top: 30px;
+        }
+
+        .text__card {
+            text-align: justify;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        .text1 {
+            display: flex;
+            gap: 20px;
+        }
+
+        .obj__button {
+            text-align: center;
         }
     </style>
 </head>
@@ -82,25 +124,34 @@ text-align: justify;
     <h2>Создайте модальное окно</h2>
     <a href="#openModal">Box</a>
     <div id="openModal" class="modalDialog">
-        <div>
+        <div class="modalbox">
             <a href="#close" title="Close" class="close">X</a>
-            <h2>Модальное окно </h2>
-            <p>Это модальное окно создано с помощью CSS3!</p>
-            <div class="text">Сегодня в программировании довольно распространены модальные окна. Модальные или
-                всплывающие окна используются, чтобы показать последние изменения веб-страницы. Они привлекают внимание
-                пользователя к определенному элементу.
-                Самое главное преимущество модального окна это то, что оно показывает добавленную информацию без
-                дополнительной загрузки страницы. Оно дает пользователю соответствующую информацию в виде диалогового
-                окна.
-                Другое преимущество относится к медленной загрузке, что может привлечь внимание пользователей.
-                Теперь, когда мы узнали, что такое модальное окно, перейдем к его созданию.
-                Есть различные способы создания модального окна с помощью HTML, CSS и JavaScript.
-                Давайте начнем создать код шаг за шагом!
-                <div class="test"><img src="test.png" alt="" srcset=""></div>
+            <div class="fio__card">Иванова Анна Ивановна </div>
+            <div class="predmet_card">
+                <ul class="text1">
+                    <li class="text__list">
+                        <img class="img__card" src="avatar.png" alt=""></img>
+                    </li>
+                    <li class="text__list">
+                        <div class="text__card">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diem
+                            nonummy nibh
+                            euismod tincidunt ut lacreet dolore magna aliguam erat volutpat. Ut wisis enim
+                            ad minim veniam, quis nostrud exerci tution ullamcorper suscipit lobortis nisl
+                            ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetuer adipiscing
+                            elit, sed diem
+                            nonummy nibh
+                            euismod tincidunt ut lacreet dolore magna aliguam erat volutpat. Ut wisis enim
+                            ad minim veniam, quis nostrud exerci tution ullamcorper suscipit lobortis nisl
+                            ut aliquip ex ea commodo consequat.</div>
+                    </li>
+                </ul>
+
             </div>
+            <div class="obj__button"><button class="card__button" type="button">ЗАПИСАТЬСЯ МОЖНО ПО НОМЕРУ :
+                    8(598)246-10-25</button>
+            </div>
+            <a href="#close" title="Close" class="close">x</a>
         </div>
-        <a href="#close" title="Close" class="close">x</a>
-    </div>
 </body>
 
 </html>
